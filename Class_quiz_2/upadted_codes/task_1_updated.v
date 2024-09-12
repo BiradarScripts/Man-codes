@@ -41,10 +41,12 @@ module Seven_segment_LED_Display_Controller(
     wire [6:0]A;
     wire [7:0]B;
     wire [6:0]C;
+    wire [15:0]P;
     wire [15:0]X;
+
     
     vio_0 vio_name (
-  .clk(clk),                // input wire clk
+  .clk(clock_100Mhz),                // input wire clk
   .probe_in0(X),    // input wire [15 : 0] probe_in0
   .probe_out0(A),  // output wire [6 : 0] probe_out0
   .probe_out1(B),  // output wire [7 : 0] probe_out1

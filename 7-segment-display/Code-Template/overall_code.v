@@ -71,13 +71,21 @@ module Seven_segment_LED_Display_Controller(
     assign one_second_enable = (one_second_counter==99999999)?1:0;
     always @(posedge clock_100Mhz or posedge reset)
 begin
+//    if (reset == 1) begin
+//        addra <= 0;
+//        displayed_number <= P; // Reset the displayed_number to 0
+//    end
+//    else if (one_second_enable == 1) begin
+//        addra <= addra + 1;
+//        displayed_number <= douta; // Assign the value of douta to displayed_number
+//    end
     if (reset == 1) begin
         addra <= 0;
-        displayed_number <= P; // Reset the displayed_number to 0
+        displayed_number <= 0; // Reset the displayed_number to 0
     end
     else if (one_second_enable == 1) begin
         addra <= addra + 1;
-        displayed_number <= douta; // Assign the value of douta to displayed_number
+        displayed_number <= P; // Assign the value of douta to displayed_number
     end
 end
 

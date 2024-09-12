@@ -22,19 +22,19 @@ wire [16:0] results [9:0];
       genvar i;
     
             blk_mem_gen_1 a (
-  .clka(clka),    // input wire clka
+  .clka(clk),    // input wire clka
   .ena(ena),      // input wire ena
   .addra(addra),  // input wire [2 : 0] addra
   .douta(a_data)  // output wire [7 : 0] douta
 );
            blk_mem_gen_1 b (
-  .clka(clka),    // input wire clka
+  .clka(clk),    // input wire clka
   .ena(ena),      // input wire ena
   .addra(addra),  // input wire [2 : 0] addra
   .douta(b_data)  // output wire [7 : 0] douta
 );
            blk_mem_gen_1 c (
-  .clka(clka),    // input wire clka
+  .clka(clk),    // input wire clka
   .ena(ena),      // input wire ena
   .addra(addra),  // input wire [2 : 0] addra
   .douta(c_data)  // output wire [7 : 0] douta
@@ -45,7 +45,7 @@ wire [16:0] results [9:0];
     generate
         for (i = 0; i < 10; i = i + 1) begin : mac_gen
            dsp_macro_0 mac_inst (
-  .CLK(CLK),  // input wire CLK
+  .CLK(clk),  // input wire CLK
   .A(a_data),      // input wire [7 : 0] A
   .B(b_data),      // input wire [7 : 0] B
   .C(c_data),      // input wire [7 : 0] C

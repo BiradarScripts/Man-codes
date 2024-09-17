@@ -16,7 +16,7 @@ module Seven_segment_LED_Display_Controller(
                  // count     0    ->  1  ->  2  ->  3
               // activates    LED1    LED2   LED3   LED4
              // and repeat
-    reg ena,wea;
+    reg ena,wea;    
     reg [1:0]addra;
     reg dina;
     wire [15:0]douta;

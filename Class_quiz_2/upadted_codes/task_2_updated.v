@@ -3,6 +3,7 @@
 module Seven_segment_LED_Display_Controller(
     input clock_100Mhz, // 100 Mhz clock source on Basys 3 FPGA
     input reset, // reset
+  
     output reg [3:0] Anode_Activate, // anode signals of the 7-segment LED display
     output reg [6:0] LED_out// cathode patterns of the 7-segment LED display
     );
@@ -16,81 +17,63 @@ module Seven_segment_LED_Display_Controller(
                  // count     0    ->  1  ->  2  ->  3
               // activates    LED1    LED2   LED3   LED4
              // and repeat
-    reg ena,wea;
-    reg [1:0]addra;
-    reg dina;
-    wire [15:0]douta;
-    wire [47:0] dsp_out_mul_ab;
-    wire [47:0] dsp_out_add_ad;
+ 
+reg ena;
+reg [3:0] addra; 
+wire[1:0] select;
+wire[0:0] dummy;
 
-    // DSP for A * B
-    dsp_macro dsp_ab (
-        .clk(clk),
-        .a(A),
-        .b(B),
-        .p(dsp_out_mul_ab)
-    );
+initial
+begin
+ena=1;
+addra = 4'b0000;
 
-    // DSP for A + D
-    dsp_macro dsp_ad (
-        .clk(clk),
-        .a(A),
-        .b(D),
-        .p(dsp_out_add_ad)
-    );
+end
 
-    always @(posedge clk) begin
-        case (select)
-            2'b00: P <= dsp_out_mul_ab + C;               // A * B + C
-            2'b01: P <= dsp_out_mul_ab;                   // A * B
-            2'b10: P <= dsp_out_add_ad;                   // A + D
-            2'b11: P <= (dsp_out_add_ad * B) + C + carryin; // (A + D) * B + C + carryin
-            default: P <= 48'b0;
-        endcase
-    end
-    initial
-    begin
-        ena=1;
-        wea=0;
-        addra=2'b00;
-    end
-    
-    blk_mem_gen_0 your_instance_name (
-      .clka(clock_100Mhz),    // input wire clka
-      .ena(ena),      // input wire ena
-      .wea(wea),      // input wire [0 : 0] wea
-      .addra(addra),  // input wire [1 : 0] addra
-      .dina(dina),    // input wire [15 : 0] dina
-      .douta(douta)  // output wire [15 : 0] douta
-    );
-    
-    
-    
-    wire [6:0]A;
-    wire [7:0]B;
-    wire [6:0]C;
-    wire [15:0]X;
-    
-    vio_0 vio_name (
-  .clk(clk),                // input wire clk
-  .probe_in0(X),    // input wire [15 : 0] probe_in0
-  .probe_out0(A),  // output wire [6 : 0] probe_out0
-  .probe_out1(B),  // output wire [7 : 0] probe_out1
-  .probe_out2(C)  // output wire [6 : 0] probe_out2
+wire [17:0] a;
+wire [17:0] b;
+wire [17:0] d;
+wire [47:0] c;
+wire carryin;
+wire[47:0] P ; 
+
+
+blk_mem_gen_0 blck1 (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .addra(addra),  // input wire [2 : 0] addra
+  .douta(a)  // output wire [17 : 0] douta
 );
-   
-  
-    
-    dsp_macro_0 dsp_name (
-  .CLK(clock_100Mhz),  // input wire CLK
-  .A(A),      // input wire [6 : 0] A
-  .B(B),      // input wire [7 : 0] B
-  .C(C),      // input wire [6 : 0] C
-  .P(P)      // output wire [15 : 0] P
+blk_mem_gen_0 blck2 (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .addra(addra),  // input wire [2 : 0] addra
+  .douta(b)  // output wire [17 : 0] douta
 );
+blk_mem_gen_0 blck3 (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .addra(addra),  // input wire [2 : 0] addra
+  .douta(d)  // output wire [17 : 0] douta
+);
+blk_mem_gen_1 blck4 (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .addra(addra),  // input wire [2 : 0] addra
+  .douta(c)  // output wire [47 : 0] douta
+); 
+
+
+vio_0 your_instance_name (
+  .clk(clock_100Mhz),                // input wire clk
+  .probe_in0(dummy),    // input wire [0 : 0] probe_in0
+  .probe_out0(select)  // output wire [1 : 0] probe_out0
+);
+
+alu alu_inst(a,b,d, c, select, carryin, clock_100Mhz, P );
+ 
     
-    
-    
+//    -----------------------------------------------------------------------------
     always @(posedge clock_100Mhz or posedge reset)
     begin
         if(reset==1)

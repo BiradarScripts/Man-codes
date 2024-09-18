@@ -53,7 +53,6 @@ module Seven_segment_LED_Display_Controller(
   .probe_out2(C)  // output wire [6 : 0] probe_out2
 );
    
-  
     
     dsp_macro_0 dsp_name (
   .CLK(clock_100Mhz),  // input wire CLK

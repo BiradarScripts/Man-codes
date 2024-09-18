@@ -8,7 +8,7 @@ module Seven_segment_LED_Display_Controller(
     );
     reg [26:0] one_second_counter; // counter for generating 1 second clock enable
     wire one_second_enable;// one second enable for counting numbers
-    reg [15:0] displayed_number; // counting number to be displayed
+    reg [37:0] displayed_number; // counting number to be displayed
     reg [3:0] LED_BCD;
     reg [19:0] refresh_counter; // 20-bit for creating 10.5ms refresh period or 380Hz refresh rate
              // the first 2 MSB bits for creating 4 LED-activating signals with 2.6ms digit period
@@ -16,55 +16,57 @@ module Seven_segment_LED_Display_Controller(
                  // count     0    ->  1  ->  2  ->  3
               // activates    LED1    LED2   LED3   LED4
              // and repeat
-    reg ena,wea;
-    reg [1:0]addra;
-    reg dina;
-    wire [15:0]douta;
-    initial
-    begin
+    wire [17:0]A;
+     wire [17:0]B;
+      wire [17:0]C;
+      reg ena,wea;
+      reg [2:0]addra;
+      wire [17:0]dina;
+      initial
+        begin
         ena=1;
         wea=0;
-        addra=2'b00;
-    end
-    
-    blk_mem_gen_0 your_instance_name (
-      .clka(clock_100Mhz),    // input wire clka
-      .ena(ena),      // input wire ena
-      .wea(wea),      // input wire [0 : 0] wea
-      .addra(addra),  // input wire [1 : 0] addra
-      .dina(dina),    // input wire [15 : 0] dina
-      .douta(douta)  // output wire [15 : 0] douta
-    );
-    
-    
-    
-    wire [6:0]A;
-    wire [7:0]B;
-    wire [6:0]C;
-    wire [15:0]P;
-    wire [15:0]X;
+        addra=3'b000;
+        end
+        
+      
+      blk_mem_gen_0 mema (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .wea(wea),      // input wire [0 : 0] wea
+  .addra(addra),  // input wire [2 : 0] addra
+  .dina(dina),    // input wire [17 : 0] dina
+  .douta(A)  // output wire [17 : 0] douta
+);
 
-    
-    vio_0 vio_name (
-  .clk(clock_100Mhz),                // input wire clk
-  .probe_in0(X),    // input wire [15 : 0] probe_in0
-  .probe_out0(A),  // output wire [6 : 0] probe_out0
-  .probe_out1(B),  // output wire [7 : 0] probe_out1
-  .probe_out2(C)  // output wire [6 : 0] probe_out2
+blk_mem_gen_1 memb (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .wea(wea),      // input wire [0 : 0] wea
+  .addra(addra),  // input wire [2 : 0] addra
+  .dina(dina),    // input wire [17 : 0] dina
+  .douta(B)  // output wire [17 : 0] douta
 );
-   
-  
-    
-    dsp_macro_0 dsp_name (
+
+blk_mem_gen_2 memc (
+  .clka(clock_100Mhz),    // input wire clka
+  .ena(ena),      // input wire ena
+  .wea(wea),      // input wire [0 : 0] wea
+  .addra(addra),  // input wire [2 : 0] addra
+  .dina(dina),    // input wire [17 : 0] dina
+  .douta(C)  // output wire [17 : 0] douta
+);
+
+wire [36:0]P;
+
+dsp_macro_0 your_dsp (
   .CLK(clock_100Mhz),  // input wire CLK
-  .A(A),      // input wire [6 : 0] A
-  .B(B),      // input wire [7 : 0] B
-  .C(C),      // input wire [6 : 0] C
-  .P(P)      // output wire [15 : 0] P
+  .A(A),      // input wire [17 : 0] A
+  .B(B),      // input wire [17 : 0] B
+  .C(C),      // input wire [17 : 0] C
+  .P(P)      // output wire [36 : 0] P
 );
-    
-    
-    
+
     always @(posedge clock_100Mhz or posedge reset)
     begin
         if(reset==1)
@@ -78,25 +80,18 @@ module Seven_segment_LED_Display_Controller(
     end 
     assign one_second_enable = (one_second_counter==99999999)?1:0;
     always @(posedge clock_100Mhz or posedge reset)
-begin
-//    if (reset == 1) begin
-//        addra <= 0;
-//        displayed_number <= P; // Reset the displayed_number to 0
-//    end
-//    else if (one_second_enable == 1) begin
-//        addra <= addra + 1;
-//        displayed_number <= douta; // Assign the value of douta to displayed_number
-//    end
-    if (reset == 1) begin
-        addra <= 0;
-        displayed_number <= 0; // Reset the displayed_number to 0
+    begin
+        if(reset==1)
+        begin
+            addra<=3'b000;
+            displayed_number <= 0;
+        end
+        else if(one_second_enable==1)
+        begin
+            addra<=addra+1;
+            displayed_number <= P;
+        end
     end
-    else if (one_second_enable == 1) begin
-        addra <= addra + 1;
-        displayed_number <= P; // Assign the value of douta to displayed_number
-    end
-end
-
     always @(posedge clock_100Mhz or posedge reset)
     begin 
         if(reset==1)

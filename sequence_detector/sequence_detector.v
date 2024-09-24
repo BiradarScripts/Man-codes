@@ -45,7 +45,6 @@ module Seven_segment_LED_Display_Controller(
 
     wire temp;
 
-
     vio_0 your_instance_name (
   .clk(clock_100Mhz),                // input wire clk
   .probe_in0(addra),    // input wire [3 : 0] probe_in0

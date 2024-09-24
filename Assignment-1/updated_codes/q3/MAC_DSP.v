@@ -28,7 +28,7 @@ module MAC_DSP(
 );
 
     // Instantiate DSP block for A * B + C operation
-    dsp_macro_1 your_instance_name (
+    dsp_macro_0 your_instance_name (
         .CLK(clk),  // Connect clk to DSP clock input
         .A(A),      // Connect input A
         .B(B),      // Connect input B

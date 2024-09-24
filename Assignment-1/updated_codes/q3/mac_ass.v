@@ -17,19 +17,19 @@ module mac_parallel (
     end
     
     // Instantiate 3 BRAMs for a, b, and c
-    blk_mem_gen_1 a_bram (
+    blk_mem_gen_0 a_bram (
         .clka(clk),    // input wire clka
         .ena(ena),     // input wire ena
         .addra(addr),  // input wire [3 : 0] addra (4-bit address)
         .douta(a_data) // output wire [7 : 0] douta
     );
-    blk_mem_gen_1 b_bram (
+    blk_mem_gen_0 b_bram (
         .clka(clk),    // input wire clka
         .ena(ena),     // input wire ena
         .addra(addr),  // input wire [3 : 0] addra (4-bit address)
         .douta(b_data) // output wire [7 : 0] douta
     );
-    blk_mem_gen_1 c_bram (
+    blk_mem_gen_0 c_bram (
         .clka(clk),    // input wire clka
         .ena(ena),     // input wire ena
         .addra(addr),  // input wire [3 : 0] addra (4-bit address)

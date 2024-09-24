@@ -115,7 +115,7 @@ module Seven_segment_LED_Display_Controller(
     end
 end
 
-
+ 
     always @(posedge clock_100Mhz or posedge reset) begin
         if (reset == 1)
             refresh_counter <= 0;

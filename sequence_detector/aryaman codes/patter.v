@@ -2,6 +2,7 @@ module PatternDetector (
     input wire clock_100Mhz,
     input wire reset,
     input wire [0:0] bit, // Single-bit input from Block RAM
+    
     output reg [7:0] pattern_count // Output count of non-overlapping occurrences
 );
 

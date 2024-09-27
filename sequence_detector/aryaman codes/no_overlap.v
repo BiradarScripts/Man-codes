@@ -29,18 +29,18 @@ module PatternDetector (
             shift_reg <= {shift_reg[2:0], bit};
                 
 //            internal_count <= internal_count + 1;
-            if(counter==2'b11)
-            begin
+    
                 if (shift_reg == pattern) begin
                 internal_count <= internal_count + 1;
+                shift_reg <= 4'b0000;
           
             end 
-                counter=0;
-                shift_reg <= 4'b0000;
+                
+            
                 
                 
             end
-            counter<=counter+1;
+    
 
 
         
@@ -51,6 +51,6 @@ module PatternDetector (
             // Print the current pattern count at each clock cycle
          
         end
-    end
+
 
 endmodule

@@ -23,15 +23,26 @@ module mac_tb#(
    mac #(
        .DATA_WIDTH(DATA_WIDTH),
        .OUT_WIDTH(OUT_WIDTH)
-   ) mac_dut(
-       .clk(clk), 
-       .a(a), 
-       .b(b), 
-       .c(c), 
-       .out(out)
-   );
+   ) mac_dut (
+        .clk(clk), 
+        .reset(reset), 
+        .a(a), 
+        .b(b), 
+        .c(c), 
+        .out(out)
+    );
+   
+   
 
    // VIO Instantiation
+   vio_2 your_instance_name (
+  .clk(clk),                // input wire clk
+  .probe_in0(out),    // input wire [7 : 0] probe_in0
+  .probe_out0(a),  // output wire [3 : 0] probe_out0
+  .probe_out1(b),  // output wire [3 : 0] probe_out1
+  .probe_out2(c)  // output wire [3 : 0] probe_out2
+);
+ 
   
    always #5 clk = ~clk;
    

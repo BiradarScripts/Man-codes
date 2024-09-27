@@ -6,8 +6,8 @@ module Seven_segment_LED_Display_Controller(
     output reg [3:0] Anode_Activate, // anode signals of the 7-segment LED display
     output reg [6:0] LED_out// cathode patterns of the 7-segment LED display
     );
-    reg [3:0] one_second_counter; // counter for generating 1 second clock enable
-    wire[26:0] one_second_enable;// one second enable for counting numbers
+    reg [26:0] one_second_counter; // counter for generating 1 second clock enable
+    wire one_second_enable;// one second enable for counting numbers
     reg [15:0] displayed_number; // counting number to be displayed
     reg [3:0] LED_BCD;
     reg [19:0] refresh_counter; // 20-bit for creating 10.5ms refresh period or 380Hz refresh rate

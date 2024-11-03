@@ -1,0 +1,26 @@
+<AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
+    <sourceFile name="">
+        <directive functionName="matrixa" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="dim" value="2"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="a"/>
+            </pragma>
+        </directive>
+        <directive functionName="matrixa" label="" functionLabel="">
+            <pragma name="ARRAY_PARTITION">
+                <option name="block" value="" positionalBoolean="type"/>
+                <option name="dim" value="2"/>
+                <option name="factor" value="2"/>
+                <option name="variable" positionalBoolean="4" value="b"/>
+            </pragma>
+        </directive>
+        <directive functionName="matrixa" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="matrixa"/>
+            </pragma>
+        </directive>
+    </sourceFile>
+</AutoPilot:ProjectResources>
+

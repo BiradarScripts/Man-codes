@@ -1,0 +1,22 @@
+---
+MainSourceFile:  'D:/FPGA-24/matrix_adder/matrixa/solution1/.autopilot/db/matrixa.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_5_1:  '
+    FileOffset:      5
+    FilePath:        matrixa.cpp
+    Replacements:    
+      - FilePath:        'D:\FPGA-24\matrix_adder\matrixa\solution1\.autopilot\db\matrixa.pp.0.cpp'
+        Offset:          10094
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_5_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_7_2:  '
+    FileOffset:      7
+    FilePath:        matrixa.cpp
+    Replacements:    
+      - FilePath:        'D:\FPGA-24\matrix_adder\matrixa\solution1\.autopilot\db\matrixa.pp.0.cpp'
+        Offset:          10136
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_7_2: '
+...

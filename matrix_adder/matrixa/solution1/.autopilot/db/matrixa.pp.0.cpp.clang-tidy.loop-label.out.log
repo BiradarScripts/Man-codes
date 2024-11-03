@@ -1,0 +1,10 @@
+D:\FPGA-24\matrix_adder\matrixa\solution1\.autopilot\db\matrixa.pp.0.cpp:180:5: warning: Added loop label VITIS_LOOP_5_1:   [xilinx-label-all-loops]
+    for (int i = 0; i < 3; i++)
+    ^~~
+    VITIS_LOOP_5_1: 
+D:\FPGA-24\matrix_adder\matrixa\solution1\.autopilot\db\matrixa.pp.0.cpp:180:5: note: FIX-IT applied suggested code changes
+D:\FPGA-24\matrix_adder\matrixa\solution1\.autopilot\db\matrixa.pp.0.cpp:182:9: warning: Added loop label VITIS_LOOP_7_2:   [xilinx-label-all-loops]
+        for (int j = 0; j < 3; j++)
+        ^~~
+        VITIS_LOOP_7_2: 
+D:\FPGA-24\matrix_adder\matrixa\solution1\.autopilot\db\matrixa.pp.0.cpp:182:9: note: FIX-IT applied suggested code changes

@@ -1,0 +1,33 @@
+INFO: [HLS 200-10] Running 'D:/vivado/Vitis_HLS/2022.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Guru Biradar' on host 'hp-pc' (Windows NT_amd64 version 6.2) on Wed Oct 30 22:07:42 +0530 2024
+INFO: [HLS 200-10] In directory 'D:/FPGA-24/7segment'
+Sourcing Tcl script 'D:/FPGA-24/7segment/sequence/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source D:/FPGA-24/7segment/sequence/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project sequence 
+INFO: [HLS 200-10] Opening project 'D:/FPGA-24/7segment/sequence'.
+INFO: [HLS 200-1510] Running: set_top sequence 
+INFO: [HLS 200-1510] Running: add_files sequence.cpp 
+INFO: [HLS 200-10] Adding design file 'sequence.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb sequence_test.cpp -cflags -DHW_COSIM 
+INFO: [HLS 200-10] Adding test bench file 'sequence_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'D:/FPGA-24/7segment/sequence/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+Running Dispatch Server on port: 61695
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../sequence_test.cpp in debug mode
+   Compiling ../../../../sequence.cpp in debug mode
+   Generating csim.exe
+Software Final Count: 2
+Hardware Final Count: 2
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.24 seconds; current allocated memory: 0.312 MB.
+INFO: [HLS 200-112] Total CPU user time: 1 seconds. Total CPU system time: 0 seconds. Total elapsed time: 13.274 seconds; peak allocated memory: 105.125 MB.

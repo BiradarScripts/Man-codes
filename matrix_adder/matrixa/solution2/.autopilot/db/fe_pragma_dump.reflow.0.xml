@@ -1,0 +1,4 @@
+<pragmas>
+<pragma file="matrixa.cpp" line="6" pragmaType="array_partition" parentfunction="matrixa" dim="2" factor="2" mode="block" dynamic="0" variable="a"/>
+<pragma file="matrixa.cpp" line="7" pragmaType="array_partition" parentfunction="matrixa" dim="2" factor="2" mode="block" dynamic="0" variable="b"/>
+</pragmas>

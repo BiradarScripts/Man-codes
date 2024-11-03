@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="matrixa.cpp" path="D:\FPGA-24\matrix_adder\matrixa.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="matrixa_test.cpp" path="D:\FPGA-24\matrix_adder\matrixa_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

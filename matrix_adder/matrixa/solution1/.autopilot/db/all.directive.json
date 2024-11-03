@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "matrixa",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "D:\/FPGA-24\/matrix_adder\/matrixa\/solution1\/csynth.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "matrixa"
+              }]
+          }
+        }]
+    }]}

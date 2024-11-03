@@ -1,0 +1,2 @@
+remark: matrixa.cpp:4:0: Applying array_partition to 'a': Block partitioning with factor 2 on dimension 2.
+remark: matrixa.cpp:4:0: Applying array_partition to 'b': Block partitioning with factor 2 on dimension 2.

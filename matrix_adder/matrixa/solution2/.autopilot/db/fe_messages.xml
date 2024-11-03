@@ -1,0 +1,18 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="D:/FPGA-24/matrix_adder/matrixa/solution2/csynth.tcl:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="matrixa" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=matrixa" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="D:/FPGA-24/matrix_adder/matrixa/solution2/directives.tcl:6:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="matrixa" ARG_PragmaIsValid="1" ARG_PragmaOptions="block dim=2 factor=2 variable=a" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="D:/FPGA-24/matrix_adder/matrixa/solution2/directives.tcl:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="matrixa" ARG_PragmaIsValid="1" ARG_PragmaOptions="block dim=2 factor=2 variable=b" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="matrixa.cpp:4:0" msg_body="Applying array_partition to 'a': Block partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Block" UOName="a"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="matrixa.cpp:4:0" msg_body="Applying array_partition to 'b': Block partitioning with factor 2 on dimension 2.">
+        <args Dim="2" Factor="2" Mode="Block" UOName="b"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

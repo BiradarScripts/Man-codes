@@ -1,0 +1,840 @@
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:30:57 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35tcpg236-1 
+Execute       create_platform xc7a35tcpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 3.186 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.484 sec.
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.918 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 4.203 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 4.547 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.323 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.409 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.486 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 11.184 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 11.184 seconds; current allocated memory: 0.219 MB.
+Command ap_source done; error code: 1; 26.699 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:33:55 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 4.675 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.198 sec.
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.376 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 5.092 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 5.514 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.228 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.303 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.398 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.243 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 4.065 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.065 seconds; current allocated memory: 0.371 MB.
+Command ap_source done; 20.161 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:40:28 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 2.569 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.142 sec.
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.279 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 2.887 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 3.049 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.142 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.19 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.243 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 3.94 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.94 seconds; current allocated memory: 0.219 MB.
+Command ap_source done; error code: 1; 17.352 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:45:59 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 1.472 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.103 sec.
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.139 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.643 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.861 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command       ap_source done; 0.121 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.159 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.218 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.212 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.647 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 1.647 seconds; current allocated memory: 0.363 MB.
+Command ap_source done; 13.862 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:55:18 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.802 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.114 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.938 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.053 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.105 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.135 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 0.384 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.384 seconds; current allocated memory: 0.203 MB.
+Command ap_source done; error code: 1; 11.65 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:57:10 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.779 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.11 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.905 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.011 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.101 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.135 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO-FLOW: Caught error in csim_design: 4
+    while executing
+"ap_internal_csim_design "
+Command   csim_design done; error code: 2; 0.711 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.711 seconds; current allocated memory: 0.191 MB.
+Command ap_source done; error code: 1; 11.936 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 21:59:04 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.819 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.121 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.957 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.069 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.103 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.129 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.079 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.079 seconds; current allocated memory: 0.379 MB.
+Command ap_source done; 12.35 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 22:02:52 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.824 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.112 sec.
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.146 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.985 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.097 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.107 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.137 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.089 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.089 seconds; current allocated memory: 0.297 MB.
+Command ap_source done; 12.405 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 22:03:48 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.886 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.115 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.017 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.126 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.122 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.15 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.075 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.076 seconds; current allocated memory: 0.324 MB.
+Command ap_source done; 12.412 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 22:05:33 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.915 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.132 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.066 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.176 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.119 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.15 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.12 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.12 seconds; current allocated memory: 0.328 MB.
+Command ap_source done; 12.538 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 22:06:09 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.947 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.106 sec.
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.155 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.118 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.241 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.137 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.171 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.323 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.323 seconds; current allocated memory: 0.285 MB.
+Command ap_source done; 12.801 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 22:07:03 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 1.003 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.145 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.171 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.29 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.12 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.151 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.089 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.089 seconds; current allocated memory: 0.379 MB.
+Command ap_source done; 12.635 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/FPGA-24/7segment/sequence/solution1 opened at Wed Oct 30 22:07:42 +0530 2024
+Execute     ap_set_clock -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     set_part xc7a35t-cpg236-1 
+Execute       create_platform xc7a35t-cpg236-1 -board  
+DBG:HLSDevice: Trying to load device library: D:/vivado/Vitis_HLS/2022.2\lib\win64.o\xv_hlsvwrap.dll
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: D:/vivado/Vivado/2022.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7a35t-cpg236-1'
+Command       create_platform done; 0.964 sec.
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command       ap_source done; 0.124 sec.
+Execute       ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 1.113 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Command   open_solution done; 1.233 sec.
+Execute   set_part xc7a35tcpg236-1 
+INFO: [HLS 200-1510] Running: set_part xc7a35tcpg236-1 
+Execute     create_platform xc7a35tcpg236-1 -board  
+Execute     source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/common/xilinx.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/plb46.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/axi4.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/saxilite.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/util.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfft.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/ip/xfir.gen 
+Execute       source D:/vivado/Vitis_HLS/2022.2/common/technology/xilinx/DSP48/dsp48.gen 
+Command     ap_source done; 0.122 sec.
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     config_compile -quiet -complex-mul-dsp=0 
+Command   set_part done; 0.152 sec.
+Execute   create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+Execute   csim_design -quiet 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     ap_part_info -name xc7a35t-cpg236-1 -data info 
+Execute     source run_sim.tcl 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 1.239 sec.
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.24 seconds; current allocated memory: 0.312 MB.
+Command ap_source done; 12.7 sec.
+Execute cleanup_all 

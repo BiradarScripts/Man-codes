@@ -1,0 +1,192 @@
+
+
+================================================================
+== Vitis HLS Report for 'matrixa'
+================================================================
+* Date:           Sat Nov  2 11:36:05 2024
+
+* Version:        2022.2 (Build 3670227 on Oct 13 2022)
+* Project:        matrixa
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: artix7
+* Target device:  xc7a35t-cpg236-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.419 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       12|       12|  0.120 us|  0.120 us|   13|   13|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                 |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |            Loop Name            |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_5_1_VITIS_LOOP_7_2  |       10|       10|         3|          1|          1|     9|       yes|
+        +---------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 3
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 3, States = { 1 2 3 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 5.12>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%j = alloca i32 1"   --->   Operation 6 'alloca' 'j' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%i = alloca i32 1"   --->   Operation 7 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten = alloca i32 1"   --->   Operation 8 'alloca' 'indvar_flatten' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%spectopmodule_ln3 = spectopmodule void @_ssdm_op_SpecTopModule, void @empty_1" [matrixa.cpp:3]   --->   Operation 9 'spectopmodule' 'spectopmodule_ln3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %a, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %a"   --->   Operation 11 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %b, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i8 %b"   --->   Operation 13 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i32 %result, void @empty, i32 0, i32 0, void @empty_0, i32 4294967295, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specbitsmap_ln0 = specbitsmap void @_ssdm_op_SpecBitsMap, i32 %result"   --->   Operation 15 'specbitsmap' 'specbitsmap_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (1.61ns)   --->   "%store_ln5 = store i4 0, i4 %indvar_flatten" [matrixa.cpp:5]   --->   Operation 16 'store' 'store_ln5' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 17 [1/1] (1.61ns)   --->   "%store_ln5 = store i2 0, i2 %i" [matrixa.cpp:5]   --->   Operation 17 'store' 'store_ln5' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 18 [1/1] (1.61ns)   --->   "%store_ln5 = store i2 0, i2 %j" [matrixa.cpp:5]   --->   Operation 18 'store' 'store_ln5' <Predicate = true> <Delay = 1.61>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%br_ln5 = br void %for.inc" [matrixa.cpp:5]   --->   Operation 19 'br' 'br_ln5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%indvar_flatten_load = load i4 %indvar_flatten" [matrixa.cpp:5]   --->   Operation 20 'load' 'indvar_flatten_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 21 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (1.44ns)   --->   "%icmp_ln5 = icmp_eq  i4 %indvar_flatten_load, i4 9" [matrixa.cpp:5]   --->   Operation 22 'icmp' 'icmp_ln5' <Predicate = true> <Delay = 1.44> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.44> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (1.77ns)   --->   "%add_ln5_1 = add i4 %indvar_flatten_load, i4 1" [matrixa.cpp:5]   --->   Operation 23 'add' 'add_ln5_1' <Predicate = true> <Delay = 1.77> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.77> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%br_ln5 = br i1 %icmp_ln5, void %for.inc20, void %for.end22" [matrixa.cpp:5]   --->   Operation 24 'br' 'br_ln5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%j_load = load i2 %j" [matrixa.cpp:7]   --->   Operation 25 'load' 'j_load' <Predicate = (!icmp_ln5)> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%i_load = load i2 %i" [matrixa.cpp:5]   --->   Operation 26 'load' 'i_load' <Predicate = (!icmp_ln5)> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (1.58ns)   --->   "%add_ln5 = add i2 %i_load, i2 1" [matrixa.cpp:5]   --->   Operation 27 'add' 'add_ln5' <Predicate = (!icmp_ln5)> <Delay = 1.58> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (0.93ns)   --->   "%icmp_ln7 = icmp_eq  i2 %j_load, i2 3" [matrixa.cpp:7]   --->   Operation 28 'icmp' 'icmp_ln7' <Predicate = (!icmp_ln5)> <Delay = 0.93> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.93> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.99ns)   --->   "%select_ln5 = select i1 %icmp_ln7, i2 0, i2 %j_load" [matrixa.cpp:5]   --->   Operation 29 'select' 'select_ln5' <Predicate = (!icmp_ln5)> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.99ns)   --->   "%select_ln5_1 = select i1 %icmp_ln7, i2 %add_ln5, i2 %i_load" [matrixa.cpp:5]   --->   Operation 30 'select' 'select_ln5_1' <Predicate = (!icmp_ln5)> <Delay = 0.99> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 31 [1/1] (1.58ns)   --->   "%add_ln7 = add i2 %select_ln5, i2 1" [matrixa.cpp:7]   --->   Operation 31 'add' 'add_ln7' <Predicate = (!icmp_ln5)> <Delay = 1.58> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.58> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 32 [1/1] (1.61ns)   --->   "%store_ln7 = store i4 %add_ln5_1, i4 %indvar_flatten" [matrixa.cpp:7]   --->   Operation 32 'store' 'store_ln7' <Predicate = (!icmp_ln5)> <Delay = 1.61>
+ST_1 : Operation 33 [1/1] (1.61ns)   --->   "%store_ln7 = store i2 %select_ln5_1, i2 %i" [matrixa.cpp:7]   --->   Operation 33 'store' 'store_ln7' <Predicate = (!icmp_ln5)> <Delay = 1.61>
+ST_1 : Operation 34 [1/1] (1.61ns)   --->   "%store_ln7 = store i2 %add_ln7, i2 %j" [matrixa.cpp:7]   --->   Operation 34 'store' 'store_ln7' <Predicate = (!icmp_ln5)> <Delay = 1.61>
+
+State 2 <SV = 1> <Delay = 5.29>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%zext_ln10 = zext i2 %select_ln5_1" [matrixa.cpp:10]   --->   Operation 35 'zext' 'zext_ln10' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 36 [1/1] (0.00ns)   --->   "%tmp = bitconcatenate i4 @_ssdm_op_BitConcatenate.i4.i2.i2, i2 %select_ln5_1, i2 0" [matrixa.cpp:10]   --->   Operation 36 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 37 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%sub_ln10 = sub i4 %tmp, i4 %zext_ln10" [matrixa.cpp:10]   --->   Operation 37 'sub' 'sub_ln10' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.57> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%zext_ln10_1 = zext i2 %select_ln5" [matrixa.cpp:10]   --->   Operation 38 'zext' 'zext_ln10_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (3.14ns) (root node of TernaryAdder)   --->   "%add_ln10_1 = add i4 %sub_ln10, i4 %zext_ln10_1" [matrixa.cpp:10]   --->   Operation 39 'add' 'add_ln10_1' <Predicate = true> <Delay = 3.14> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.57> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 40 [1/1] (0.00ns)   --->   "%zext_ln10_2 = zext i4 %add_ln10_1" [matrixa.cpp:10]   --->   Operation 40 'zext' 'zext_ln10_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%a_addr = getelementptr i8 %a, i64 0, i64 %zext_ln10_2" [matrixa.cpp:10]   --->   Operation 41 'getelementptr' 'a_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (0.00ns)   --->   "%b_addr = getelementptr i8 %b, i64 0, i64 %zext_ln10_2" [matrixa.cpp:10]   --->   Operation 42 'getelementptr' 'b_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 43 [2/2] (2.15ns)   --->   "%a_load = load i4 %a_addr" [matrixa.cpp:10]   --->   Operation 43 'load' 'a_load' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_2 : Operation 44 [2/2] (2.15ns)   --->   "%b_load = load i4 %b_addr" [matrixa.cpp:10]   --->   Operation 44 'load' 'b_load' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_2 : Operation 58 [1/1] (0.00ns)   --->   "%ret_ln13 = ret" [matrixa.cpp:13]   --->   Operation 58 'ret' 'ret_ln13' <Predicate = (icmp_ln5)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 6.41>
+ST_3 : Operation 45 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @VITIS_LOOP_5_1_VITIS_LOOP_7_2_str"   --->   Operation 45 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 46 [1/1] (0.00ns)   --->   "%empty = speclooptripcount i32 @_ssdm_op_SpecLoopTripCount, i64 9, i64 9, i64 9"   --->   Operation 46 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 47 [1/1] (0.00ns)   --->   "%specpipeline_ln0 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 1, i32 0, void @p_str"   --->   Operation 47 'specpipeline' 'specpipeline_ln0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 48 [1/1] (0.00ns)   --->   "%result_addr = getelementptr i32 %result, i64 0, i64 %zext_ln10_2" [matrixa.cpp:10]   --->   Operation 48 'getelementptr' 'result_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 49 [1/1] (0.00ns)   --->   "%specloopname_ln7 = specloopname void @_ssdm_op_SpecLoopName, void @empty_2" [matrixa.cpp:7]   --->   Operation 49 'specloopname' 'specloopname_ln7' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 50 [1/2] (2.15ns)   --->   "%a_load = load i4 %a_addr" [matrixa.cpp:10]   --->   Operation 50 'load' 'a_load' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 51 [1/1] (0.00ns)   --->   "%sext_ln10 = sext i8 %a_load" [matrixa.cpp:10]   --->   Operation 51 'sext' 'sext_ln10' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 52 [1/2] (2.15ns)   --->   "%b_load = load i4 %b_addr" [matrixa.cpp:10]   --->   Operation 52 'load' 'b_load' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 9> <RAM>
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%sext_ln10_1 = sext i8 %b_load" [matrixa.cpp:10]   --->   Operation 53 'sext' 'sext_ln10_1' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 54 [1/1] (2.11ns)   --->   "%add_ln10 = add i9 %sext_ln10_1, i9 %sext_ln10" [matrixa.cpp:10]   --->   Operation 54 'add' 'add_ln10' <Predicate = true> <Delay = 2.11> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 2.11> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%sext_ln10_2 = sext i9 %add_ln10" [matrixa.cpp:10]   --->   Operation 55 'sext' 'sext_ln10_2' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 56 [1/1] (2.15ns)   --->   "%store_ln10 = store i32 %sext_ln10_2, i4 %result_addr" [matrixa.cpp:10]   --->   Operation 56 'store' 'store_ln10' <Predicate = true> <Delay = 2.15> <CoreInst = "RAM">   --->   Core 82 'RAM' <Latency = 1> <II = 1> <Delay = 2.15> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 9> <RAM>
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%br_ln7 = br void %for.inc" [matrixa.cpp:7]   --->   Operation 57 'br' 'br_ln7' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 5.12ns
+The critical path consists of the following:
+	'alloca' operation ('j') [4]  (0 ns)
+	'load' operation ('j_load', matrixa.cpp:7) on local variable 'j' [25]  (0 ns)
+	'icmp' operation ('icmp_ln7', matrixa.cpp:7) [30]  (0.937 ns)
+	'select' operation ('select_ln5', matrixa.cpp:5) [31]  (0.993 ns)
+	'add' operation ('add_ln7', matrixa.cpp:7) [51]  (1.58 ns)
+	'store' operation ('store_ln7', matrixa.cpp:7) of variable 'add_ln7', matrixa.cpp:7 on local variable 'j' [54]  (1.61 ns)
+
+ <State 2>: 5.3ns
+The critical path consists of the following:
+	'sub' operation ('sub_ln10', matrixa.cpp:10) [35]  (0 ns)
+	'add' operation ('add_ln10_1', matrixa.cpp:10) [38]  (3.15 ns)
+	'getelementptr' operation ('a_addr', matrixa.cpp:10) [40]  (0 ns)
+	'load' operation ('a_load', matrixa.cpp:10) on array 'a' [44]  (2.15 ns)
+
+ <State 3>: 6.42ns
+The critical path consists of the following:
+	'load' operation ('a_load', matrixa.cpp:10) on array 'a' [44]  (2.15 ns)
+	'add' operation ('add_ln10', matrixa.cpp:10) [48]  (2.12 ns)
+	'store' operation ('store_ln10', matrixa.cpp:10) of variable 'sext_ln10_2', matrixa.cpp:10 on array 'result' [50]  (2.15 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

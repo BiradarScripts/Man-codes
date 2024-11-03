@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<BindInfo>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln5_fu_159_p2" SOURCE="matrixa.cpp:5" VARIABLE="icmp_ln5" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln5_1_fu_165_p2" SOURCE="matrixa.cpp:5" VARIABLE="add_ln5_1" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln5_fu_177_p2" SOURCE="matrixa.cpp:5" VARIABLE="add_ln5" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op icmp" ID="" IMPL="auto" LATENCY="0" OPTYPE="icmp" PRAGMA="" RTLNAME="icmp_ln7_fu_183_p2" SOURCE="matrixa.cpp:7" VARIABLE="icmp_ln7" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op select" ID="" IMPL="auto_sel" LATENCY="0" OPTYPE="select" PRAGMA="" RTLNAME="select_ln5_fu_189_p3" SOURCE="matrixa.cpp:5" VARIABLE="select_ln5" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op select" ID="" IMPL="auto_sel" LATENCY="0" OPTYPE="select" PRAGMA="" RTLNAME="select_ln5_1_fu_197_p3" SOURCE="matrixa.cpp:5" VARIABLE="select_ln5_1" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="sub_ln10_fu_296_p2" SOURCE="matrixa.cpp:10" VARIABLE="sub_ln10" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op all" ID="" IMPL="tadder" LATENCY="0" OPTYPE="all" PRAGMA="" RTLNAME="add_ln10_1_fu_305_p2" SOURCE="matrixa.cpp:10" VARIABLE="add_ln10_1" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mux" ID="" IMPL="auto" LATENCY="0" OPTYPE="mux" PRAGMA="" RTLNAME="mux_21_8_1_1_U1" SOURCE="matrixa.cpp:10" VARIABLE="tmp" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op mux" ID="" IMPL="auto" LATENCY="0" OPTYPE="mux" PRAGMA="" RTLNAME="mux_21_8_1_1_U2" SOURCE="matrixa.cpp:10" VARIABLE="tmp_1" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln10_fu_280_p2" SOURCE="matrixa.cpp:10" VARIABLE="add_ln10" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+	<BindNode BINDTYPE="op" DISPLAY="bind_op add" ID="" IMPL="fabric" LATENCY="0" OPTYPE="add" PRAGMA="" RTLNAME="add_ln7_fu_233_p2" SOURCE="matrixa.cpp:7" VARIABLE="add_ln7" MODULE="matrixa" LOOP="loop1_loop2" BUNDLEDNAME="" DSP="0" BRAM="0" URAM="0"/>
+</BindInfo>

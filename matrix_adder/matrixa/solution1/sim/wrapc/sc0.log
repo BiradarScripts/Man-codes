@@ -1,0 +1,6 @@
+   Build using "D:/vivado/Vitis_HLS/2022.2/tps/win64/msys64/mingw64/bin/g++"
+   Compiling matrixa_test.cpp_pre.cpp.tb.cpp
+   Compiling matrixa.cpp_pre.cpp.tb.cpp
+   Compiling apatb_matrixa.cpp
+   Compiling apatb_matrixa_ir.ll
+   Generating cosim.tv.exe

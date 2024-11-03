@@ -1,0 +1,78 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [
+        {
+          "functionName": "matrixa",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "D:\/FPGA-24\/matrix_adder\/matrixa\/solution2\/directives.tcl",
+          "sourceLine": "6",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "dim",
+                "value": "2"
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "variable",
+                "value": "a"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "matrixa",
+          "label": "",
+          "functionLabel": "",
+          "id": "2",
+          "sourceFile": "D:\/FPGA-24\/matrix_adder\/matrixa\/solution2\/directives.tcl",
+          "sourceLine": "7",
+          "pragma": {
+            "name": "ARRAY_PARTITION",
+            "option": [
+              {
+                "name": "block",
+                "value": ""
+              },
+              {
+                "name": "dim",
+                "value": "2"
+              },
+              {
+                "name": "factor",
+                "value": "2"
+              },
+              {
+                "name": "variable",
+                "value": "b"
+              }
+            ]
+          }
+        },
+        {
+          "functionName": "matrixa",
+          "label": "",
+          "functionLabel": "",
+          "id": "3",
+          "sourceFile": "D:\/FPGA-24\/matrix_adder\/matrixa\/solution2\/csynth.tcl",
+          "sourceLine": "14",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "matrixa"
+              }]
+          }
+        }
+      ]
+    }]}

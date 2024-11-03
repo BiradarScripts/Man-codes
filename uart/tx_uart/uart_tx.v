@@ -22,8 +22,8 @@ module uart_tx #(
     
     assign o_uart_ready = o_uart_ready_reg;
     assign o_uart_tx = o_uart_tx_reg;
-    
-    
+
+
     integer frame_idx = 0;
     
     // add the two always blocks here 

@@ -89,3 +89,8 @@ void matrixmul(
 
 #endif // __MATRIXMUL_H__ not defined
 
+
+
+// this is co-sim flag --> The flag -DHW_COSIM should be enabled in the C Flags for the co-simulation to go through.
+
+// -DHW_COSIM

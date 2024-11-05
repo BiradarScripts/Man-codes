@@ -1,4 +1,4 @@
- /*******************************************************************************
+/*******************************************************************************
 Vendor: Xilinx 
 Associated Filename: adders_test.c
 Purpose: Vivado HLS tutorial example 
@@ -43,39 +43,49 @@ THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS PART OF THIS FILE AT
 ALL TIMES.
 
 *******************************************************************************/
-#include<iostream>
+#include <stdio.h>
+
 #include "adders.h"
-
-using namespace std;
-
+ 
 int main()
 {
-	din_a_t in1=10;
-	din_b_t in2=20;
-	din_c_t in3=30;
-	dout_t hw_dout3, sw_dout3;
-	int err_cnt = 0;
-	// Generate the expected result
-	sw_dout3 = in1 + in2 + in3;
+	int inA, inB, inC;
+	int sum;
+	// For adders
+	int refOut[5] = {60, 90, 120, 150, 180};
+	int pass;
+	int i;
 
-//#ifdef HW_COSIM
-	// Run the AutoESL matrix multiply block
-	adders(in1, in2, in3, hw_dout3);
-//#endif
-	// Print result matrix
-	cout << "hw_dout3 = " << hw_dout3 << endl;
-	cout << "sw_dout3 = " << sw_dout3 << endl;
-
-//#ifdef HW_COSIM
-	if (hw_dout3 != sw_dout3) {
-		err_cnt++;
-		cout << "ERROR: " << err_cnt << " mismatches detected!" << endl;
-	} else {
-		cout << "Test passed." << endl;
+	inA = 10;
+	inB = 20;
+	inC = 30;
+	
+	// Call the adder for 5 transactions
+	for (i=0; i<5; i++)
+	{
+		sum = adders(inA, inB, inC);
+		
+		fprintf(stdout, "  %d+%d+%d=%d \n", inA, inB, inC, sum);
+  
+	  // Test the output against expected results
+		if (sum == refOut[i])
+			pass = 1;
+		else 
+			pass = 0;
+			
+		inA=inA+10;
+		inB=inB+10;
+		inC=inC+10;
 	}
 
-//#endif
-
-	return err_cnt;
-	// Testbench
+	if (pass)
+	{
+		fprintf(stdout, "----------Pass!------------\n");
+		return 0;
+	}
+	else
+	{
+		fprintf(stderr, "----------Fail!------------\n");
+		return 1;
+	}
 }

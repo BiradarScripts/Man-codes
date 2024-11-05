@@ -1,6 +1,6 @@
- /*******************************************************************************
+/*******************************************************************************
 Vendor: Xilinx 
-Associated Filename: adders_test.c
+Associated Filename: adders.c
 Purpose: Vivado HLS tutorial example 
 Device: All 
 Revision History: March 1, 2013 - initial release
@@ -43,39 +43,26 @@ THIS COPYRIGHT NOTICE AND DISCLAIMER MUST BE RETAINED AS PART OF THIS FILE AT
 ALL TIMES.
 
 *******************************************************************************/
-#include<iostream>
 #include "adders.h"
 
-using namespace std;
+int adders(int in1, int in2, int in3) {
+#pragma HLS INTERFACE ap_ctrl_none port=return
 
-int main()
-{
-	din_a_t in1=10;
-	din_b_t in2=20;
-	din_c_t in3=30;
-	dout_t hw_dout3, sw_dout3;
-	int err_cnt = 0;
-	// Generate the expected result
-	sw_dout3 = in1 + in2 + in3;
+// Prevent IO protocols on all input ports
+#pragma HLS INTERFACE ap_none port=in3
+#pragma HLS INTERFACE ap_none port=in2
+#pragma HLS INTERFACE ap_none port=in1
 
-//#ifdef HW_COSIM
-	// Run the AutoESL matrix multiply block
-	adders(in1, in2, in3, hw_dout3);
-//#endif
-	// Print result matrix
-	cout << "hw_dout3 = " << hw_dout3 << endl;
-	cout << "sw_dout3 = " << sw_dout3 << endl;
 
-//#ifdef HW_COSIM
-	if (hw_dout3 != sw_dout3) {
-		err_cnt++;
-		cout << "ERROR: " << err_cnt << " mismatches detected!" << endl;
-	} else {
-		cout << "Test passed." << endl;
-	}
+	int sum;
+	
+	sum = in1 + in2 + in3;
+	
+	return sum;
 
-//#endif
-
-	return err_cnt;
-	// Testbench
 }
+
+
+
+
+
